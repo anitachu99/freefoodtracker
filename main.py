@@ -4,14 +4,24 @@ import urllib2
 import urllib
 import jinja2
 import os
+import datetime
 from google.appengine.api import users
+from google.appengine.ext import ndb
 
 
 jinja_environment = jinja2.Environment(loader=
     jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
-# class Food(ndb.Model):
-
+class Food(ndb.Model):
+#    image = ndb.BlobProperty()
+    personname = ndb.StringProperty()
+    time_begin = ndb.StringProperty()
+    owner = ndb.UserProperty()
+    location = ndb.StringProperty()
+#    views = ndb.IntegerProperty()
+    message = ndb.StringProperty()
+    time_end = ndb.StringProperty()
+    created = ndb.DateTimeProperty()
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
@@ -39,6 +49,16 @@ class AddPostHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/addPost.html')
         self.response.write(template.render())
+        user = users.get_current_user()
+        my_food = Food(created=datetime.datetime.now(),
+                        owner=user,
+                        location=self.request.get('location'), personname=self.request.get('personname'),
+                          message=self.request.get('message'), time_end=self.request.get('time_end'),
+                        time_begin=self.request.get('time_begin'))
+        key = my_food.put()
+        self.response.headers['Content-Type'] = 'text/plain'
+#        self.response.write(key.id())
+
 
     def post(self):
         template = jinja_environment.get_template('templates/output_order.html')
@@ -51,17 +71,11 @@ class AddPostHandler(webapp2.RequestHandler):
           'time_end_answer': self.request.get('time_end'),
           'message_answer': self.request.get('message')
           }
-        self.response.write(template.render(pizza_order))
-
-
-
-
-
-
-
+        self.response.write(template.render(food_post))
 
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
-    ('/log_in', MainPage)
+    ('/log_in', MainPage),
+    ('/addpost', AddPostHandler)
 ], debug=True)
