@@ -46,7 +46,8 @@ class AddPostHandler(webapp2.RequestHandler):
           'food_type_answer': self.request.get('food_type'),
           'location_answer': self.request.get('location'),
           'date_answer': self.request.get('date'),
-          'time_answer': self.request.get('time')
+          'time_begin_answer': self.request.get('time_begin'),
+          'time_end_answer': self.request.get('time_end')
           }
         self.response.write(template.render(pizza_order))
 
