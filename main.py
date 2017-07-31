@@ -26,7 +26,7 @@ class MainHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template("templates/food.html")
         self.response.write(template.render())
 
-    def post(self):
+#    def post(self):
 
 
 
@@ -38,5 +38,6 @@ class MainHandler(webapp2.RequestHandler):
 
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/', MainHandler),
+    ('/', MainPage)
 ], debug=True)
