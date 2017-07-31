@@ -75,5 +75,6 @@ class AddPostHandler(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
-    ('/log_in', MainPage)
+    ('/log_in', MainPage),
+    ('/addpost', AddPostHandler)
 ], debug=True)
