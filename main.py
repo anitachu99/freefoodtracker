@@ -6,10 +6,11 @@ import jinja2
 import os
 from google.appengine.api import users
 
+
 jinja_environment = jinja2.Environment(loader=
     jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
-
+# class Food(ndb.Model):
 
 
 class MainPage(webapp2.RequestHandler):
@@ -47,7 +48,8 @@ class AddPostHandler(webapp2.RequestHandler):
           'location_answer': self.request.get('location'),
           'date_answer': self.request.get('date'),
           'time_begin_answer': self.request.get('time_begin'),
-          'time_end_answer': self.request.get('time_end')
+          'time_end_answer': self.request.get('time_end'),
+          'message_answer': self.request.get('message')
           }
         self.response.write(template.render(pizza_order))
 
