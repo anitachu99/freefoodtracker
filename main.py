@@ -14,6 +14,10 @@ jinja_environment = jinja2.Environment(loader=
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
+
+        template = jinja_environment.get_template("templates/food1.html")
+        self.response.write(template.render())
+
         user = users.get_current_user()
         if user:
             greeting = ('Welcome, %s! (<a href="%s">sign out</a>)' %
@@ -39,5 +43,6 @@ class MainHandler(webapp2.RequestHandler):
 
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/', MainHandler),
+    ('/log_in', MainPage)
 ], debug=True)
