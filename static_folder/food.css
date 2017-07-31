@@ -1,13 +1,13 @@
-h1 {
+#box {
   position:absolute;
   top:50%;
   left:50%;
   margin-top:-50px; /* this is half the height of your div*/
-  margin-left:-450px;
-  padding:50px ;
-  font-family: "Georgia", Georgia, serif;
+  margin-left:-350px;
+  padding:25px ;
+  font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   color: #4682B4;
-  font-size: 70px;
+  font-size: 35px;
   border: 5px dashed blue;
   background-color: lightblue;
 }
@@ -39,18 +39,24 @@ h1 {
                      repeat-y;
   background-position: 0 0,
                        30px 70px,
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  /*height: 400px;*/
   display: block;
 
-  background-size: contain;
+  background-size: cover  ;
 
 }
+
+/*#mess {
+    width: 100px; height: 20px; border: 1px solid
+}*/
+
 img {
-  width: 470px;
-  height: 350px;
+  width: 353px;
+  height: 263px;
   display: inline-block;
 }
 html {
   display :block;
 }
+button {}
