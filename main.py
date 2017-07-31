@@ -5,13 +5,22 @@ import urllib
 import jinja2
 import os
 from google.appengine.api import users
+from google.appengine.ext import ndb
 
 
 jinja_environment = jinja2.Environment(loader=
     jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
-# class Food(ndb.Model):
-
+class Food(ndb.Model):
+#    image = ndb.BlobProperty()
+    personname = ndb.StringProperty()
+    time_begin = ndb.StringProperty()
+    owner = ndb.UserProperty()
+    location = ndb.StringProperty()
+    views = ndb.IntegerProperty()
+    message = ndb.StringProperty()
+    time_end = ndb.StringProperty()
+    people_in_photo = ndb.KeyProperty(Person, repeated=True)
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
