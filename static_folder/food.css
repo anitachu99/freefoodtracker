@@ -1,0 +1,44 @@
+h1 {
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-top:-50px; /* this is half the height of your div*/
+  margin-left:-450px;
+  padding:50px ;
+  font-family: "Georgia", Georgia, serif;
+  color: #4682B4;
+  font-size: 70px;
+  border: 10px dashed blue;
+  background-color: lightblue;
+}
+#multiplebgs {
+  background: url(http://www.seriouseats.com/recipes/assets_c/2015/07/20150728-homemade-whopper-food-lab-35-thumb-1500xauto-425129.jpg),
+              url(https://www-tc.pbs.org/food/files/2012/07/History-of-Ice-Cream-1.jpg),
+              url(http://img.sparknotes.com/content/sparklife/sparktalk/2hotdogs_Large.jpg),
+              url(http://santmagazine.com/wp-content/uploads/2017/05/bubble-tea.jpg),
+              url(http://img.taste.com.au/MudZOM3z/taste/2016/11/french-fries-87711-1.jpeg),
+              url(https://images-gmi-pmc.edge-generalmills.com/409f1c83-3747-4b1a-9295-5de19cc0fc07.jpg),
+              url(https://www.browneyedbaker.com/wp-content/uploads/2008/06/thick-chewy-chocolate-chip-cookies-21-600.jpg),
+              url(http://assets.epicurious.com/photos/57b360e7df05218810c5212a/2:1/w_1260%2Ch_630/katharine-hepburns-brownies.jpg),
+              url(https://static.wixstatic.com/media/c837b8_369d1ad44501466297f7d91c53c33bb6~mv2.jpg/v1/fill/w_300,h_300/c837b8_369d1ad44501466297f7d91c53c33bb6~mv2.jpg),
+              ;
+  background-repeat: no-repeat,
+                     no-repeat,
+                     no-repeat,
+                     no-repeat,
+                     no-repeat,
+                     no-repeat,
+                     no-repeat,
+                     no-repeat,
+                     repeat-y;
+  background-position: 0 0,
+                       30px 70px,
+  width: 400px;
+  height: 400px;
+
+
+}
+img {
+  width: 470px;
+  height: 350px;
+}
