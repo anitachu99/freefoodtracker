@@ -17,11 +17,10 @@ class Food(ndb.Model):
     time_begin = ndb.StringProperty()
     owner = ndb.UserProperty()
     location = ndb.StringProperty()
-    views = ndb.IntegerProperty()
+#    views = ndb.IntegerProperty()
     message = ndb.StringProperty()
     time_end = ndb.StringProperty()
     created = ndb.DateTimeProperty()
-#    people_in_photo = ndb.KeyProperty(Person, repeated=True)
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
@@ -49,6 +48,16 @@ class AddPostHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/addPost.html')
         self.response.write(template.render())
+        user = users.get_current_user()
+        my_food = Food(created=datetime.datetime.now(),
+                        owner=user,
+                        location=self.request.get('location'), personname=self.request.get('personname'),
+                          message=self.request.get('message'), time_end=self.request.get('time_end'),
+                        time_begin=self.request.get('time_begin'))
+        key = my_food.put()
+        self.response.headers['Content-Type'] = 'text/plain'
+#        self.response.write(key.id())
+
 
     def post(self):
         template = jinja_environment.get_template('templates/output_order.html')
