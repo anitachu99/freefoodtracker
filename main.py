@@ -20,7 +20,8 @@ class Food(ndb.Model):
     views = ndb.IntegerProperty()
     message = ndb.StringProperty()
     time_end = ndb.StringProperty()
-    people_in_photo = ndb.KeyProperty(Person, repeated=True)
+    created = ndb.DateTimeProperty()
+#    people_in_photo = ndb.KeyProperty(Person, repeated=True)
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
