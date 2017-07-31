@@ -12,12 +12,14 @@ input[type=text], [type=time]{
     padding: 12px 20px;
     margin: 3px 0;
     box-sizing: border-box;
+    font-size: 16px;
 }
 input[type=date] {
     width: 15%;
     padding: 12px 20px;
     margin: 5px 0;
     box-sizing: border-box;
+    font-size: 16px;
 }
 input {
     text-align: center;
@@ -27,4 +29,7 @@ textarea {
   padding: 12px 30px;
   margin: 5px 0;
   box-sizing: border-box;
+}
+#box {
+  font-size: 14px;
 }
