@@ -33,6 +33,22 @@ class MainHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template("templates/food.html")
         self.response.write(template.render())
 
+class AddPostHandler(webapp2.RequestHandler):
+
+    def get(self):
+        template = jinja_environment.get_template('templates/addPost.html')
+        self.response.write(template.render())
+
+    def post(self):
+        template = jinja_environment.get_template('templates/output_order.html')
+        food_post = {
+          'personname_answer': self.request.get('personname'),
+          'food_type_answer': self.request.get('food_type'),
+          'location_answer': self.request.get('location'),
+          'date_answer': self.request.get('date'),
+          'time_answer': self.request.get('time')
+          }
+        self.response.write(template.render(pizza_order))
 
 
 
