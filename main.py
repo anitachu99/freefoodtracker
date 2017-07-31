@@ -70,14 +70,7 @@ class AddPostHandler(webapp2.RequestHandler):
           'time_end_answer': self.request.get('time_end'),
           'message_answer': self.request.get('message')
           }
-        self.response.write(template.render(pizza_order))
-
-
-
-
-
-
-
+        self.response.write(template.render(food_post))
 
 
 app = webapp2.WSGIApplication([
