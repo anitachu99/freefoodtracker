@@ -45,10 +45,9 @@ class MainHandler(webapp2.RequestHandler):
         self.response.write(template.render())
 
 class AddPostHandler(webapp2.RequestHandler):
-
     def get(self):
         template = jinja_environment.get_template('templates/addPost.html')
-        self.response.write(template.render())
+
         user = users.get_current_user()
         my_food = Food(created=datetime.datetime.now(),
                         owner=user,
@@ -56,9 +55,9 @@ class AddPostHandler(webapp2.RequestHandler):
                           message=self.request.get('message'), time_end=self.request.get('time_end'),
                         time_begin=self.request.get('time_begin'))
         key = my_food.put()
-        self.response.headers['Content-Type'] = 'text/plain'
-#        self.response.write(key.id())
-
+        self.response.headers['Content-Type'] = 'text/html'
+        # self.response.write(key.id())
+        self.response.write(template.render())
 
     def post(self):
         template = jinja_environment.get_template('templates/output_order.html')
