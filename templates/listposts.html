@@ -8,9 +8,16 @@
 	{% if post|length > 0 %}
 		<h1>Location: {{ location }}</h1>
 
-		<ul>
+
 		{% for posts in post %}
-			<li>{{ posts.personname }}, {{ location }}, {{ posts.food_type }}, {{ posts.created }}, {{ posts.time_begin}} - {{ posts.time_end }}, {{ posts.message }}</li>
+		<div id="search_results">
+        {{ posts.personname }},
+        {{ location }},
+        {{ posts.food_type }},
+        {{ posts.created }},
+        {{ posts.time_begin}} - {{ posts.time_end }},
+        {{ posts.message }}
+    </div>
 		{% endfor %}
 		</ul>
 	{% else %}
