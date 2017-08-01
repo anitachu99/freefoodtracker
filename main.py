@@ -13,13 +13,13 @@ jinja_environment = jinja2.Environment(loader=
     jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
 class Food(ndb.Model):
-#    image = ndb.BlobProperty()
+    # image = ndb.BlobProperty()
     personname = ndb.StringProperty()
     time_begin = ndb.StringProperty()
     food_type = ndb.StringProperty()
     # owner = ndb.UserProperty()
     location = ndb.StringProperty()
-#    views = ndb.IntegerProperty()
+    # views = ndb.IntegerProperty()
     message = ndb.StringProperty()
     time_end = ndb.StringProperty()
     created = ndb.DateTimeProperty()
