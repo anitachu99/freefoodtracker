@@ -58,4 +58,6 @@ img {
 html {
   display :block;
 }
-button {}
+body {
+  background-color:#471b21;
+}
