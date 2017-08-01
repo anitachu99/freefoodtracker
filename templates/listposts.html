@@ -1,18 +1,20 @@
 <html>
 <head>
-	<title>Songs by {{ artist_name }}</title>
+	<title>Food Type: {{ food_type }}</title>
+  <link rel="shortcut icon" href="/resources/favicon.ico" />
+
 </head>
-<body>
-	{% if songs|length > 0 %}
-		<h1>Songs by {{ artist_name }}</h1>
+<body background="https://media.giphy.com/media/JWxscGiOF0ILu/giphy.gif">
+	{% if post|length > 0 %}
+		<h1>Food Type: {{ food_type }}</h1>
 
 		<ul>
-		{% for song in songs %}
-			<li>{{ song }}</li>
+		{% for posts in post %}
+			<li>{{ posts }}</li>
 		{% endfor %}
 		</ul>
 	{% else %}
-		<p>We couldn't find any songs by {{ artist_name }}!</p>
+		<p>We don't have that type of food yet. Sorry!</p>
 	{% endif %}
 
 </body>

@@ -96,6 +96,7 @@ class ListPostHandler(webapp2.RequestHandler):
         userInput = self.request.get("food_type")
         results = Food.query().fetch()
         template_vars = {
+                'food_type': userInput,
                 'post': []
                 }
         for result in results:
