@@ -16,12 +16,14 @@ class Food(ndb.Model):
 #    image = ndb.BlobProperty()
     personname = ndb.StringProperty()
     time_begin = ndb.StringProperty()
-    owner = ndb.UserProperty()
+    food_type = ndb.StringProperty()
+    # owner = ndb.UserProperty()
     location = ndb.StringProperty()
 #    views = ndb.IntegerProperty()
     message = ndb.StringProperty()
     time_end = ndb.StringProperty()
     created = ndb.DateTimeProperty()
+    date = ndb.StringProperty()
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
@@ -47,29 +49,42 @@ class MainHandler(webapp2.RequestHandler):
 class AddPostHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/addPost.html')
-
-        user = users.get_current_user()
-        my_food = Food(created=datetime.datetime.now(),
-                        owner=user,
-                        location=self.request.get('location'), personname=self.request.get('personname'),
-                          message=self.request.get('message'), time_end=self.request.get('time_end'),
-                        time_begin=self.request.get('time_begin'))
-        key = my_food.put()
-        self.response.headers['Content-Type'] = 'text/html'
-        # self.response.write(key.id())
+        # user = users.get_current_user()
         self.response.write(template.render())
 
     def post(self):
-        template = jinja_environment.get_template('templates/output_order.html')
+        name = self.request.get("personname")
+        food_type = self.request.get('food_type')
+        location = self.request.get('location')
+        date = self.request.get('date')
+        time_begin = self.request.get('time_begin')
+        time_end = self.request.get('time_end')
+        message = self.request.get('message')
+
+        my_food = Food(created=datetime.datetime.now(),
+                        personname=name,
+                        food_type=food_type,
+                        location=location,
+                        date=date,
+                        time_begin=time_begin,
+                        time_end=time_end,
+                        message=message)
+        key = my_food.put()
+        self.response.headers['Content-Type'] = 'text/html'
+
         food_post = {
-          'personname_answer': self.request.get('personname'),
-          'food_type_answer': self.request.get('food_type'),
-          'location_answer': self.request.get('location'),
-          'date_answer': self.request.get('date'),
-          'time_begin_answer': self.request.get('time_begin'),
-          'time_end_answer': self.request.get('time_end'),
-          'message_answer': self.request.get('message')
+          'personname_answer': name,
+          'food_type_answer': food_type,
+          'location_answer': location,
+          'date_answer': date,
+          'time_begin_answer': time_begin,
+          'time_end_answer': time_end,
+          'message_answer': message
           }
+        key = my_food.put()
+        self.response.write(key.id())
+
+        template = jinja_environment.get_template('templates/showposts.html')
         self.response.write(template.render(food_post))
 
 
