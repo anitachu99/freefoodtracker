@@ -89,7 +89,7 @@ class AddPostHandler(webapp2.RequestHandler):
 
 class ListPostHandler(webapp2.RequestHandler):
     def get(self):
-        template = jinja_environment.get_template('templates/showposts.html')
+        template = jinja_environment.get_template('templates/searchposts.html')
         self.response.out.write(template.render())
 
     def post(self):
@@ -101,7 +101,7 @@ class ListPostHandler(webapp2.RequestHandler):
         for result in results:
             if result.food_type == userInput:
                     template_vars['post'].append(result)
-            template = jinja_environment.get_template('templates/showposts.html')
+            template = jinja_environment.get_template('templates/listposts.html')
             self.response.out.write(template.render(template_vars))
         else:
             self.response.out.write("We don't have that type of food yet. Sorry!")
