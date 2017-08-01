@@ -109,7 +109,7 @@ class ListPostHandler(webapp2.RequestHandler):
 
 class MenuHandler(webapp2.RequestHandler):
     def get(self):
-        template = jinja_environment.get_template('templates/searchposts.html')
+        template = jinja_environment.get_template('templates/menu.html')
         self.response.out.write(template.render())
 
 app = webapp2.WSGIApplication([
