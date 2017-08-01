@@ -2,15 +2,15 @@
 <head>
 	<title>Food Type: {{ food_type }}</title>
   <link rel="shortcut icon" href="/resources/favicon.ico" />
-
+  <link rel="stylesheet" href="/resources/addPost.css" />
 </head>
-<body background="https://media.giphy.com/media/JWxscGiOF0ILu/giphy.gif">
+<body background="https://media.giphy.com/media/14yquCbnbigBZC/giphy.gif">
 	{% if post|length > 0 %}
 		<h1>Food Type: {{ food_type }}</h1>
 
 		<ul>
 		{% for posts in post %}
-			<li>{{ posts }}</li>
+			<li id="search_text">{{ posts }}</li>
 		{% endfor %}
 		</ul>
 	{% else %}
