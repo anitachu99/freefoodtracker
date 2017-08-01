@@ -93,20 +93,18 @@ class ListPostHandler(webapp2.RequestHandler):
         self.response.out.write(template.render())
 
     def post(self):
-        userInput = self.request.get("name")
-        results = Song.query().order(Song.artist_name).fetch()
-        if len(listOfArtistsObj) > 0:
-            template_vars = {
-                'artist_name': userInput,
-                'songs': []
+        userInput = self.request.get("food_type")
+        results = Food.query().fetch()
+        template_vars = {
+                'post': []
                 }
-            for result in results:
-                if result.artist_name == userInput:
-                    template_vars['songs'].append(result.title)
+        for result in results:
+            if result.food_type == userInput:
+                    template_vars['post'].append(result)
             template = jinja_environment.get_template('templates/.html')
             self.response.out.write(template.render(template_vars))
         else:
-            self.response.out.write("")
+            self.response.out.write("We don't have that type of food yet. Sorry!")
 
 
 app = webapp2.WSGIApplication([
