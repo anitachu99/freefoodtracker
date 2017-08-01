@@ -82,7 +82,6 @@ class AddPostHandler(webapp2.RequestHandler):
           'message_answer': message
           }
         key = my_food.put()
-        self.response.write(key.id())
 
         template = jinja_environment.get_template('templates/food2.html')
         self.response.write(template.render(food_post))
