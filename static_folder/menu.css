@@ -58,4 +58,6 @@ img {
 html {
   display :block;
 }
-button {}
+.SideBar{
+  display: none;
+}
