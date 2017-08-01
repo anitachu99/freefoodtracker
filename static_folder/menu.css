@@ -38,7 +38,7 @@
                      repeat-y;
   background-position: 0 0,
                        30px 70px,
-
+  width: 300px;
   /*height: 400px;*/
   display: block;
 
@@ -58,6 +58,4 @@ img {
 html {
   display :block;
 }
-/*.SideBar{
-  display: none;
-}*/
+button {}
