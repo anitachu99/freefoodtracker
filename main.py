@@ -102,10 +102,10 @@ class ListPostHandler(webapp2.RequestHandler):
         for result in results:
             if result.food_type == userInput.upper():
                     template_vars['post'].append(result)
-            template = jinja_environment.get_template('templates/listposts.html')
-            self.response.out.write(template.render(template_vars))
-        else:
-            self.response.out.write("We don't have that type of food yet. Sorry!")
+        # else:
+        #     self.response.out.write("We don't have that type of food yet. Sorry!")
+        template = jinja_environment.get_template('templates/listposts.html')
+        self.response.out.write(template.render(template_vars))
 
 
 app = webapp2.WSGIApplication([
