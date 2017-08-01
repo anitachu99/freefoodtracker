@@ -1,21 +1,30 @@
 <html>
 <head>
-	<title>Food Type: {{ food_type }}</title>
+	<title>Location: {{ location }}</title>
   <link rel="shortcut icon" href="/resources/favicon.ico" />
   <link rel="stylesheet" href="/resources/addPost.css" />
 </head>
 <body background="https://media.giphy.com/media/14yquCbnbigBZC/giphy.gif">
 	{% if post|length > 0 %}
-		<h1>Food Type: {{ food_type }}</h1>
+		<h1>Location: {{ location }}</h1>
 
-		<ul>
+
 		{% for posts in post %}
-			<li>{{ posts.name }}, {{ posts.food_type }}, {{ posts.created }}, {{ posts.time_begin}} - {{ posts.time_end }}, {{ posts.message }}</li>
+		<div id="search_results">
+        {{ posts.personname }},
+        {{ location }},
+        {{ posts.food_type }},
+        {{ posts.created }},
+        {{ posts.time_begin}} - {{ posts.time_end }},
+        {{ posts.message }}
+    </div>
 		{% endfor %}
 		</ul>
 	{% else %}
-		<p>We don't have that type of food yet. Sorry!</p>
+		<p>We don't know about food near your location. Sorry!</p>
 	{% endif %}
-
+  <a href="/addpost">Add Another Post!</a>
+  <a href="/menu">Return to Menu</a>
+  <a href="/search">Search</a>
 </body>
 </html>

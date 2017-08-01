@@ -64,7 +64,7 @@ class AddPostHandler(webapp2.RequestHandler):
         my_food = Food(created=datetime.datetime.now(),
                         personname=name,
                         food_type=food_type.upper(),
-                        location=location,
+                        location=location.upper(),
                         date=date,
                         time_begin=time_begin,
                         time_end=time_end,
@@ -84,7 +84,7 @@ class AddPostHandler(webapp2.RequestHandler):
         key = my_food.put()
         self.response.write(key.id())
 
-        template = jinja_environment.get_template('templates/showposts.html')
+        template = jinja_environment.get_template('templates/food2.html')
         self.response.write(template.render(food_post))
 
 class ListPostHandler(webapp2.RequestHandler):
@@ -93,15 +93,19 @@ class ListPostHandler(webapp2.RequestHandler):
         self.response.out.write(template.render())
 
     def post(self):
-        userInput = self.request.get("food_type")
+        userInput = self.request.get("location")
         results = Food.query().fetch()
         template_vars = {
-                'food_type': userInput,
+                'location': userInput,
                 'post': []
                 }
         for result in results:
-            if result.food_type == userInput.upper():
+            print result.location
+            print userInput.upper()
+            if result.location.upper() == userInput.upper():
                     template_vars['post'].append(result)
+
+        print template_vars
         # else:
         #     self.response.out.write("We don't have that type of food yet. Sorry!")
         template = jinja_environment.get_template('templates/listposts.html')
