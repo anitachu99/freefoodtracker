@@ -1,14 +1,16 @@
 #box {
   position:absolute;
-  top:50%;
+  top:45%;
   left:50%;
   margin-top:-50px; /* this is half the height of your div*/
   margin-left:-350px;
-  padding:25px ;
+  padding:20px ;
   font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   color: #4682B4;
   font-size: 35px;
   background-color: lightblue;
+  /*display: flex;
+  transition: box-shadow .3s ease;*/
 }
 #multiplebgs {
   background-image: url(http://www.seriouseats.com/recipes/assets_c/2015/07/20150728-homemade-whopper-food-lab-35-thumb-1500xauto-425129.jpg),
