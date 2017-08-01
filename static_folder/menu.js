@@ -10,16 +10,20 @@
 //   document.getElementById("openNav").style.display = "inline-block";
 // }
 
+$( "#menu" ).click(function() {
+  testTrue();
+});
+
 var open=false;
 
 function openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("mySideBar").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
     open=true;
 }
 
 function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("mySideBar").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
     open=false;
 }
