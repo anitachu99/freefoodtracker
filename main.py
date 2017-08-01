@@ -104,7 +104,7 @@ class ListPostHandler(webapp2.RequestHandler):
             template = jinja_environment.get_template('templates/.html')
             self.response.out.write(template.render(template_vars))
         else:
-            self.response.out.write("")
+            self.response.out.write("We don't have that type of food yet. Sorry!")
 
 
 app = webapp2.WSGIApplication([
