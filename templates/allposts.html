@@ -6,9 +6,9 @@
 </head>
 <body background="http://37.media.tumblr.com/d7c3b56ae37fadb53a62bb5239ca4f48/tumblr_muq0foNvFu1si4e7ko1_500.gif">
 	{% if post|length > 0 %}
-		<h1>All the Posts!</h1>
+		<h1 style="color: black">All the Posts!</h1>
 		{% for posts in post %}
-		<div id="search_results">
+		<div id="search_results" style="color: black">
         {{ posts.personname }},
         {{ location }},
         {{ posts.food_type }},
@@ -17,7 +17,6 @@
         {{ posts.message }}
     </div>
 		{% endfor %}
-		</ul>
 	{% else %}
 		<p>We don't know about food near your location. Sorry!</p>
 	{% endif %}

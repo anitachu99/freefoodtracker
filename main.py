@@ -118,22 +118,17 @@ class MenuHandler(webapp2.RequestHandler):
 
 class AllPostHandler(webapp2.RequestHandler):
     def get(self):
-        template = jinja_environment.get_template('templates/allposts.html')
-        self.response.out.write(template.render())
-
-    def post(self):
         results = Food.query().order(Food.created).fetch()
         template_vars = {
                 'post': []
                 }
         for result in results:
-            print userInput.upper()
             template_vars['post'].append(result)
 
         print template_vars
         # else:
         #     self.response.out.write("We don't have that type of food yet. Sorry!")
-        template = jinja_environment.get_template('templates/listposts.html')
+        template = jinja_environment.get_template('templates/allposts.html')
         self.response.out.write(template.render(template_vars))
 
 app = webapp2.WSGIApplication([
