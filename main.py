@@ -37,7 +37,7 @@ class MainPage(webapp2.RequestHandler):
                 (user.nickname(), users.create_logout_url('/')))
         else:
             greeting = ('<a href="%s">Sign in or register</a>.' %
-                users.create_login_url('/'))
+                users.create_login_url('/menu'))
 
         self.response.write('<html><body>%s</body></html>' % greeting)
 
@@ -107,10 +107,15 @@ class ListPostHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('templates/listposts.html')
         self.response.out.write(template.render(template_vars))
 
+class MenuHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('templates/searchposts.html')
+        self.response.out.write(template.render())
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/log_in', MainPage),
     ('/addpost', AddPostHandler),
     ('/search', ListPostHandler)
+    ('/menu', MenuHandler)
 ], debug=True)

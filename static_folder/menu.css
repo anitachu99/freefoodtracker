@@ -72,8 +72,19 @@ button {}
     padding-top: 60px;
 }
 
-.barpost {
+.barpost a {
   font-family: Montserrat;
-  font-size: 20px;
+  font-size: 30px;
   font-color: white;
+  transition: 0.3s;
+}
+
+$menu {
+  font-size: 30px;
+  text-shadow: 1.5px 1.5px black;
+  transition: margin-left .5s;
+    transition-property: margin-left;
+    transition-duration: 0.5s;
+    transition-timing-function: initial;
+    transition-delay: initial;
 }
