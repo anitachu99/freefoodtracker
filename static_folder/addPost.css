@@ -5,6 +5,8 @@
 body {
   padding: 12px;
   border: 10px dashed white;
+  font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  color: White;
 }
 input[type=text], [type=time]{
     width: 25%;
@@ -36,7 +38,9 @@ p {
   color: white;
 
 }
-background {
-  width: 200px;
-  height: 300px;
+form {
+  border: 5px;
+}
+#searchtext {
+  color: black;
 }
