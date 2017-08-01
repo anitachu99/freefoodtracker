@@ -13,13 +13,13 @@ jinja_environment = jinja2.Environment(loader=
     jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
 class Food(ndb.Model):
-#    image = ndb.BlobProperty()
+    # image = ndb.BlobProperty()
     personname = ndb.StringProperty()
     time_begin = ndb.StringProperty()
     food_type = ndb.StringProperty()
     # owner = ndb.UserProperty()
     location = ndb.StringProperty()
-#    views = ndb.IntegerProperty()
+    # views = ndb.IntegerProperty()
     message = ndb.StringProperty()
     time_end = ndb.StringProperty()
     created = ndb.DateTimeProperty()
@@ -86,6 +86,27 @@ class AddPostHandler(webapp2.RequestHandler):
 
         template = jinja_environment.get_template('templates/showposts.html')
         self.response.write(template.render(food_post))
+
+class ListPostHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('templates/.html')
+        self.response.out.write(template.render())
+
+    def post(self):
+        userInput = self.request.get("name")
+        results = Song.query().order(Song.artist_name).fetch()
+        if len(listOfArtistsObj) > 0:
+            template_vars = {
+                'artist_name': userInput,
+                'songs': []
+                }
+            for result in results:
+                if result.artist_name == userInput:
+                    template_vars['songs'].append(result.title)
+            template = jinja_environment.get_template('templates/.html')
+            self.response.out.write(template.render(template_vars))
+        else:
+            self.response.out.write("")
 
 
 app = webapp2.WSGIApplication([
