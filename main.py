@@ -63,7 +63,7 @@ class AddPostHandler(webapp2.RequestHandler):
 
         my_food = Food(created=datetime.datetime.now(),
                         personname=name,
-                        food_type=food_type,
+                        food_type=food_type.upper(),
                         location=location,
                         date=date,
                         time_begin=time_begin,
@@ -100,7 +100,7 @@ class ListPostHandler(webapp2.RequestHandler):
                 'post': []
                 }
         for result in results:
-            if result.food_type == userInput:
+            if result.food_type == userInput.upper():
                     template_vars['post'].append(result)
             template = jinja_environment.get_template('templates/listposts.html')
             self.response.out.write(template.render(template_vars))
