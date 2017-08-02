@@ -22,7 +22,7 @@ span {
   font-family: cursive;
   font-size: 60px;
   font-weight: bold;
-  color: black;
+  color: white;
 }
 
 $menu {
@@ -48,4 +48,100 @@ $menu {
 
 #go {
   box-shadow:0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+body{
+  background-size: cover;
+}
+#bigbox {
+  position:absolute;
+  top:45%;
+  left:50%;
+  margin-top:-100px; /* this is half the height of your div*/
+  margin-left:-200px;
+  padding:20px;
+  font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  color: white;
+  font-size: 35px;
+  /*background-color: lightblue;*/
+  /*display: flex;
+  transition: box-shadow .3s ease;*/
+}
+
+#box {
+  position: relative;
+
+}
+#titlebg{
+  /* Absolutely position it, but stretch it to all four corners, then put it just behind #search's z-index */
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 99;
+
+  /* Pull the background 70px higher to the same place as #bg's */
+  background-position: center -70px;
+
+  -webkit-filter: blur(10px);
+  filter: url('https://www.indresano.com/blog/wp-content/uploads/2017/01/1T5A2123_V2.gif');
+  filter: blur(10px);
+}
+
+#title {
+  /* Put this on top of the blurred layer */
+  position: relative;
+  z-index: 100;
+  padding: 15px;
+  background: rgb(34,34,34); /* for IE */
+  background: rgba(34,34,34,0.75);
+}
+
+ img (max-width: 600px) {
+  #bigbox { padding: 10px; }
+  #titlebg { background-position: center -10px; }
+}
+
+#title h1, #title h2, #title h2  { text-align: center; color: white; font-weight: normal; }
+#title h1 { margin-bottom: 50px }
+#title h2 { margin-top: 40px }
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: lightblue;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  padding: 4px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
