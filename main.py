@@ -7,6 +7,7 @@ import os
 import datetime
 from google.appengine.api import users
 from google.appengine.ext import ndb
+#from social.backends.google import GoogleOAuth2
 
 
 jinja_environment = jinja2.Environment(loader=
@@ -40,6 +41,18 @@ class MainPage(webapp2.RequestHandler):
                 users.create_login_url('/menu'))
 
         self.response.write('<html><body>%s</body></html>' % greeting)
+
+    # def save_profile(backend, user, response, *args, **kwargs):
+    #     if isinstance(backend, GoogleOAuth2):
+    #         if response.get('image') and response['image'].get('url'):
+    #             url = response['image'].get('url')
+    #             ext = url.split('.')[-1]
+    #             user.avatar.save(
+    #             '{0}.{1}'.format('avatar', ext),
+    #             ContentFile(urllib2.urlopen(url).read()),
+    #             save=False
+    #             )
+    #             user.save()
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
@@ -95,6 +108,11 @@ class AddPostHandler(webapp2.RequestHandler):
 
         template = jinja_environment.get_template('templates/allposts.html')
         self.response.write(template.render(template_vars))
+
+class DeletePostHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("templates/deletepost.html")
+        self.response.write(template.render())
 
 class ListPostHandler(webapp2.RequestHandler):
     def get(self):
@@ -152,5 +170,6 @@ app = webapp2.WSGIApplication([
     ('/search', ListPostHandler),
     ('/menu', MenuHandler),
     ('/allposts', AllPostHandler),
-    ('/calendar', CalendarHandler)
+    ('/calendar', CalendarHandler),
+    ('/deletepost', DeletePostHandler)
 ], debug=True)
