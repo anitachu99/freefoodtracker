@@ -127,7 +127,7 @@ class AllPostHandler(webapp2.RequestHandler):
         print template_vars
         # else:
         #     self.response.out.write("We don't have that type of food yet. Sorry!")
-        template = jinja_environment.get_template('templates/allposts.html')
+        template = jinja_environment.get_template('templates/listposts.html')
         self.response.out.write(template.render(template_vars))
 
 app = webapp2.WSGIApplication([
