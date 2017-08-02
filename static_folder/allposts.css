@@ -1,3 +1,90 @@
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
 h1 {
   color: black;
+}
+body {
+  background-size: cover;
+}
+a {
+  color: #f06d06;
+  text-decoration: none;
+}
+body {
+  display: inline-block;
+}
+h2{
+  font-weight: 400;
+  letter-spacing: -1.5px;
+  line-height: 1.2;}
+#search_results {
+  padding: 2em;
+  border: 1px solid #ccc;
+  display: inline-block;
+  width: 50%;
+  height: 300px;
+  float: left;
+  margin: -1px 0 0 -1px;
+  color: black;
+  background: linear-gradient(
+     white, white 50%, #333 50%, #333
+  );
+  background-size: 100% 202%;
+  transition: all 0.2s ease;
+  animation: down-bump 0.4s ease;
+}
+ #search_results: hover{background-position: 100% 100%;
+  animation: up-bump 0.4s ease;}
+  #search_results: hover h2 {
+  color: #48ad26;
+}
+@keyframes up-bump {
+  0% { padding-top: 2em; }
+  50% { padding-top: 1.5em; }
+  100% { padding-top: 2em; }
+}
+@keyframes down-bump {
+  0% { padding-top: 2em; }
+  50% { padding-top: 2.5em; }
+  100% { padding-top: 2em; }
+}
+.Sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #471b21;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.barpost a {
+  font-family: Montserrat;
+  font-size: 30px;
+  font-color: white;
+  transition: 0.3s;
+}
+
+button {
+  font-size: 20px;
+  color: white;
+  background-color:#471b21;
+  border: #471b21;
+  text-align: center;
+  text-decoration: none;
+  line-height: 57.5px;
+  font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+}
+
+#search_results {
+  width: 500px;
+  height: 300px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.posts {
+  position: relative;
+  border: 5px solid;
 }
