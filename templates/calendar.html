@@ -2,14 +2,45 @@
 <head>
   <link rel= "stylesheet" href= "/resources/calendar.css">
   <link rel="shortcut icon" href="/resources/favicon.ico" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <title> Calendar </title>
 </head>
-<body background="https://media.giphy.com/media/3oz8xB06mHyoGE7ZoQ/source.gif">
+<body>
   <center>
   <h1>Calendar</h1>
-  <a href="/addpost">Add Another Post!</a>
-  <a href="/menu">Return to Menu</a>
-  <a href="/search">Search</a>
-  </center>
+</center>
+  <div id="main" style="marginLeft:0px;">
+  <span style="font-size:30px;cursor:pointer" id="menu">☰ Menu</span></div>
+    <div id="mySideBar" class="Sidebar">
+      <a href="/menu" class="barpost"><button class="barpost">Home</button></a></br>
+      <a href="/addpost" class="barpost"><button class="barpost">Create Post</button></a></br>
+      <a href="/search" class="barpost"><button class="barpost">Search Posts</button></a></br>
+      <a href="/allposts" ><button class="barpost">Show Posts</button></a>
+    </div>
+
+
+  <table style="width:80%">
+    <tr>
+      <th>Sunday</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+    </tr>
+    <tr>
+      <td>Jill</td>
+      <td>Smith</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>Eve</td>
+      <td>Jackson</td>
+      <td>94</td>
+    </tr>
+  </table>
+
+<script src="resources/calendar.js"></script>
 </body>
 </html>

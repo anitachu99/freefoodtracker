@@ -118,7 +118,7 @@ app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/log_in', MainPage),
     ('/addpost', AddPostHandler),
-    ('/search', ListPostHandler),
+    # ('/search', ListPostHandler),
     ('/menu', MenuHandler),
     ('/allposts', AllPostHandler),
     ('/calendar', CalendarHandler),
