@@ -1,0 +1,47 @@
+.Sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #471b21;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.barpost a {
+  font-family: Montserrat;
+  font-size: 30px;
+  font-color: white;
+  transition: 0.3s;
+}
+
+span {
+  font-family: cursive;
+  font-size: 60px;
+  font-weight: bold;
+  color: black;
+}
+
+$menu {
+  font-size: 30px;
+  text-shadow: 1.5px 1.5px black;
+  transition: margin-left .5s;
+    transition-property: margin-left;
+    transition-duration: 0.5s;
+    transition-timing-function: initial;
+    transition-delay: initial;
+}
+
+.barpost {
+  font-size: 20px;
+  color: white;
+  background-color:#471b21;
+  border: #471b21;
+  text-align: center;
+  text-decoration: none;
+  line-height: 57.5px;
+  font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+}
