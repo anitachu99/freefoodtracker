@@ -130,11 +130,17 @@ class AllPostHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('templates/listposts.html')
         self.response.out.write(template.render(template_vars))
 
+class CalendarHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("templates/calendar.html")
+        self.response.write(template.render())
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/log_in', MainPage),
     ('/addpost', AddPostHandler),
     ('/search', ListPostHandler),
     ('/menu', MenuHandler),
-    ('/allposts', AllPostHandler)
+    ('/allposts', AllPostHandler),
+    ('/calendar', CalendarHandler)
 ], debug=True)
