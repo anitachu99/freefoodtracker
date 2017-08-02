@@ -53,7 +53,7 @@ h2{
 button {
   font-size: 20px;
   color: white;
-  background-color:black;
+  background-color:#471b21;
   border: #471b21;
   text-align: center;
   text-decoration: none;
@@ -64,6 +64,9 @@ button {
 #search_results {
   width: 500px;
   height: 300px;
-  margin-left: 20px;
+  margin-left: 100px;
   margin-bottom: 10px;
+}
+#delete {
+  background-color: black;
 }
