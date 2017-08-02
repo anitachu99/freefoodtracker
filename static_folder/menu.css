@@ -2,13 +2,12 @@
   position:absolute;
   top:50%;
   left:50%;
-  margin-top:-50px; /* this is half the height of your div*/
-  margin-left:-350px;
+  margin-top:-34px; /* this is half the height of your div*/
+  margin-left:-327px;
   padding:25px ;
-  font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-family: /*Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;*/ 'Amatica SC', cursive;
   color: #4682B4;
-  font-size: 35px;
-  background-color: lightblue;
+  font-size: 45px;
 }
 body {
   background-image: url(http://www.seriouseats.com/recipes/assets_c/2015/07/20150728-homemade-whopper-food-lab-35-thumb-1500xauto-425129.jpg),
@@ -110,3 +109,55 @@ span {
 body {
   background-color: #471b21;
 }
+#bigbox {
+  position:absolute;
+  top:45%;
+  left:50%;
+  margin-top:-50px; /* this is half the height of your div*/
+  margin-left:-200px;
+  padding:20px;
+  font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  color: white;
+  font-size: 35px;
+  /*background-color: lightblue;*/
+  /*display: flex;
+  transition: box-shadow .3s ease;*/
+}
+
+#box {
+  position: relative;
+
+}
+#titlebg{
+  /* Absolutely position it, but stretch it to all four corners, then put it just behind #search's z-index */
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 99;
+
+  /* Pull the background 70px higher to the same place as #bg's */
+  background-position: center -70px;
+
+  -webkit-filter: blur(10px);
+  filter: url('#multiplebgs');
+  filter: blur(10px);
+}
+
+#title {
+  /* Put this on top of the blurred layer */
+  position: relative;
+  z-index: 100;
+  padding: 10px;
+  background: rgb(34,34,34); /* for IE */
+  background: rgba(34,34,34,0.75);
+}
+
+ img (max-width: 600px) {
+  #bigbox { padding: 10px; }
+  #titlebg { background-position: center -10px; }
+}
+
+#title h1 { text-align: center; color: white; font-weight: normal; }
+#title h1 { margin-bottom: 35px; margin-top: 35px }
