@@ -10,13 +10,15 @@
 //   document.getElementById("openNav").style.display = "inline-block";
 // }
 
-$( "#menu" ).click(function() {
+$("#menu").click(function() {
+  console.log("menu is clicked")
   testTrue();
 });
 
-$( "#create_post" ).click(function() {
+$("#create_post").click(function() {
+  console.log("hello, this is the empty function")
   empty();
-  console.log('you clicked the button and the function should be called')
+
 });
 
 var open=false;
