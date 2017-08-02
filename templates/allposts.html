@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="/resources/allposts.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
-<body background="http://www.thephoblographer.com/wp-content/uploads/2015/11/4mugs1.gif">
+<body background="https://media3.giphy.com/media/WQMgnHWQdyZjO/giphy.gif">
 	<div id="main" style="marginLeft:0px;">
   <span style="font-size:30px;cursor:pointer" id="menu">☰ Menu</span></div>
     <div id="mySideBar" class="Sidebar">
@@ -24,7 +24,7 @@
       Food Type: {{ posts.food_type }},</br>
         Time: {{ posts.time_begin}} - {{ posts.time_end }},</br>
       Message:  {{ posts.message }}</h2>
-		<button id="delete" type="button">Delete</button>
+		<button id="delete" type="button"><a href="/deletepost">Delete</a></button>
     </span>
 
 		{% endfor %}
