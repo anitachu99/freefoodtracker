@@ -83,7 +83,7 @@ class AddPostHandler(webapp2.RequestHandler):
           }
         key = my_food.put()
 
-        template = jinja_environment.get_template('templates/food2.html')
+        template = jinja_environment.get_template('templates/allposts.html')
         self.response.write(template.render(food_post))
 
 class ListPostHandler(webapp2.RequestHandler):
