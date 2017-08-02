@@ -14,6 +14,10 @@ $( "#menu" ).click(function() {
   testTrue();
 });
 
+$( "#create_post" ).click(function() {
+  empty();
+});
+
 var open=false;
 
 function openNav() {
@@ -35,4 +39,16 @@ function testTrue(){
     else if (open == false){
       openNav();
     }
+}
+
+function empty() {
+    var personname = $('#personname').val();
+    var food_type = $('#food_type').val();
+    var location = $('#location').val();
+    var date = $('#date').val();
+    var time_begin = $('#time_begin').val();
+    var time_end = $('#time_end').val();
+
+    if 
+
 }
