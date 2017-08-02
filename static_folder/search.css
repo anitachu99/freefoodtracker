@@ -34,7 +34,9 @@ $menu {
     transition-timing-function: initial;
     transition-delay: initial;
 }
-
+#main {
+  background-color:#471b21;
+}
 .barpost {
   font-size: 20px;
   color: white;
