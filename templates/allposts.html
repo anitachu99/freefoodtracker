@@ -2,26 +2,36 @@
 <head>
 	<title>All Posts</title>
   <link rel="shortcut icon" href="/resources/favicon.ico" />
-  <link rel="stylesheet" href="/resources/listposts.css" />
+  <link rel="stylesheet" href="/resources/allposts.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
-<body background="http://37.media.tumblr.com/d7c3b56ae37fadb53a62bb5239ca4f48/tumblr_muq0foNvFu1si4e7ko1_500.gif">
-	{% if post|length > 0 %}
-		<h1 style="color: black">All the Posts!</h1>
-		{% for posts in post %}
-		<div id="search_results" style="color: black">
-        {{ posts.personname }},
-        {{ posts.location }},
-        {{ posts.food_type }},
-        {{ posts.created }},
-        {{ posts.time_begin}} - {{ posts.time_end }},
-        {{ posts.message }}
+<body background="http://www.thephoblographer.com/wp-content/uploads/2015/11/4mugs1.gif">
+	<div id="main" style="marginLeft:0px;">
+  <span style="font-size:30px;cursor:pointer" id="menu">☰ Menu</span></div>
+    <div id="mySideBar" class="Sidebar">
+      <a href="/menu" class="barpost"><button>Home</button></a></br>
+      <a href="/addpost" class="barpost"><button>Create Post</button></a></br>
+      <a href="/search" class="barpost"><button>Search Posts</button></a></br>
+      <a href="/allposts" class="barpost"><button>Show Posts</button></a>
     </div>
+
+	{% if post|length > 0 %}
+		<center><h1>All the Posts!</h1></center>
+		{% for posts in post %}
+		<span id="search_results" style="color: black">
+        <h2>Username: {{ posts.personname }} </br>
+        Location: {{ posts.location }},</br>
+      Food Type: {{ posts.food_type }},</br>
+        Time: {{ posts.time_begin}} - {{ posts.time_end }},</br>
+      Message:  {{ posts.message }}</h2>
+		<button id="delete" type="button">Delete</button>
+    </span>
+
 		{% endfor %}
 	{% else %}
 		<p>We don't know about food near your location. Sorry!</p>
 	{% endif %}
-  <a href="/addpost">Add Another Post!</a>
-  <a href="/menu">Return to Menu</a>
-  <a href="/search">Search</a>
+
+	<script src="resources/allposts.js"></script>
 </body>
 </html>
