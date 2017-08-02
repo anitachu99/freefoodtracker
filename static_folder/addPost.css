@@ -7,7 +7,9 @@ body {
   border: 10px dashed white;
   font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   color: White;
+  /*background-attachment: fixed;*/
 }
+
 input[type=text], [type=time]{
     width: 25%;
     padding: 12px 20px;
@@ -22,6 +24,7 @@ input[type=date] {
     box-sizing: border-box;
     font-size: 16px;
 }
+
 input {
     text-align: center;
 }
