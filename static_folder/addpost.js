@@ -16,6 +16,7 @@ $( "#menu" ).click(function() {
 
 $( "#create_post" ).click(function() {
   empty();
+  console.log('you clicked the button and the function should be called')
 });
 
 var open=false;
@@ -49,6 +50,24 @@ function empty() {
     var time_begin = $('#time_begin').val();
     var time_end = $('#time_end').val();
 
-    if 
+    if (personname == "") {
+      event.preventDefault();
+      alert("Please enter your name");
+    } else if (food_type == "") {
+      event.preventDefault();
+      alert("Please enter the food type");
+    } else if (location == "") {
+      event.preventDefault();
+      alert("Please enter the location");
+    } else if (date == "") {
+      event.preventDefault();
+      alert("Please enter the date");
+    } else if (time_begin == "") {
+      event.preventDefault();
+      alert("Please enter the time the event starts");
+    } else if (time_end == "") {
+      event.preventDefault();
+      alert("Please enter the time the event starts");
+    };
 
 }
