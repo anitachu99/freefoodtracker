@@ -25,6 +25,16 @@ span {
   color: white;
 }
 
+$menu {
+  font-size: 30px;
+  text-shadow: 1.5px 1.5px black;
+  transition: margin-left .5s;
+    transition-property: margin-left;
+    transition-duration: 0.5s;
+    transition-timing-function: initial;
+    transition-delay: initial;
+}
+
 #main {
   background-color:#471b21;
 }
