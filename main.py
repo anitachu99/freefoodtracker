@@ -82,9 +82,19 @@ class AddPostHandler(webapp2.RequestHandler):
           'message_answer': message
           }
         key = my_food.put()
+        results = Food.query().order(Food.created).fetch()
+        results = results[::-1]
+        template_vars = {
+                'post': []
+                }
+        for result in results:
+            print result.location
+            template_vars['post'].append(result)
+
+        print template_vars
 
         template = jinja_environment.get_template('templates/allposts.html')
-        self.response.write(template.render(food_post))
+        self.response.write(template.render(template_vars))
 
 class ListPostHandler(webapp2.RequestHandler):
     def get(self):
