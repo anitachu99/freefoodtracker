@@ -109,6 +109,50 @@ class AddPostHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('templates/allposts.html')
         self.response.write(template.render(template_vars))
 
+class ListPostHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('templates/searchposts.html')
+        self.response.out.write(template.render())
+
+    def post(self):
+        userInput = self.request.get("location")
+        results = Food.query().fetch()
+        template_vars = {
+                'location': userInput,
+                'post': []
+                }
+        for result in results:
+            print result.location
+            print userInput.upper()
+            if result.location.upper() == userInput.upper():
+                    template_vars['post'].append(result)
+
+        print template_vars
+        # else:
+        #     self.response.out.write("We don't have that type of food yet. Sorry!")
+        template = jinja_environment.get_template('templates/listposts.html')
+        self.response.out.write(template.render(template_vars))
+
+class MenuHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('templates/menu.html')
+        self.response.out.write(template.render())
+
+class AllPostHandler(webapp2.RequestHandler):
+    def get(self):
+        results = Food.query().order(Food.created).fetch()
+        template_vars = {
+                'post': []
+                }
+        for result in results:
+            template_vars['post'].append(result)
+
+        print template_vars
+        # else:
+        #     self.response.out.write("We don't have that type of food yet. Sorry!")
+        template = jinja_environment.get_template('templates/allposts.html')
+        self.response.out.write(template.render(template_vars))
+
 class CalendarHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("templates/calendar.html")
@@ -118,9 +162,8 @@ app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/log_in', MainPage),
     ('/addpost', AddPostHandler),
-    # ('/search', ListPostHandler),
+    ('/search', ListPostHandler),
     ('/menu', MenuHandler),
     ('/allposts', AllPostHandler),
-    ('/calendar', CalendarHandler),
-    ('/deletepost', DeletePostHandler)
+    ('/calendar', CalendarHandler)
 ], debug=True)
