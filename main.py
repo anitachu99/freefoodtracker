@@ -127,7 +127,7 @@ class AllPostHandler(webapp2.RequestHandler):
         print template_vars
         # else:
         #     self.response.out.write("We don't have that type of food yet. Sorry!")
-        template = jinja_environment.get_template('templates/listposts.html')
+        template = jinja_environment.get_template('templates/allposts.html')
         self.response.out.write(template.render(template_vars))
 
 class CalendarHandler(webapp2.RequestHandler):
