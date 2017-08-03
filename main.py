@@ -5,6 +5,7 @@ import urllib
 import jinja2
 import os
 import datetime
+import time
 from google.appengine.api import users
 from google.appengine.ext import ndb
 #from social.backends.google import GoogleOAuth2
@@ -105,7 +106,7 @@ class AddPostHandler(webapp2.RequestHandler):
             template_vars['post'].append(result)
 
         print template_vars
-
+        time.sleep(.1)
         self.redirect('/allposts')
 
 class ListPostHandler(webapp2.RequestHandler):
@@ -159,6 +160,7 @@ class AllPostHandler(webapp2.RequestHandler):
         #print "item =" + item
         print "working"
         post_key.delete()
+        time.sleep(.1)
         self.redirect('/allposts')
 
 class CalendarHandler(webapp2.RequestHandler):
