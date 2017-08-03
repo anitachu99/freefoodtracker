@@ -22,7 +22,7 @@ span {
   font-family: cursive;
   font-size: 60px;
   font-weight: bold;
-  color: black;
+  color: white;
 }
 
 $menu {
@@ -44,4 +44,46 @@ $menu {
   text-decoration: none;
   line-height: 57.5px;
   font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+}
+#search_results {
+  padding: 2em;
+  border: 1px solid #ccc;
+  display: inline-block;
+  width: 50%;
+  height: 200px;
+  float: left;
+  margin: -1px 0 0 -1px;
+  color: black;
+  font-size: 22px;
+  background: linear-gradient(
+     white, white 50%, #333 50%, #333
+  );
+  background-size: 100% 202%;
+}
+h1 {
+  color:white;
+}
+body {
+  background-size: cover;
+}
+a {
+  color: #f06d06;
+  text-decoration: none;
+}
+body {
+  display: inline-block;
+}
+h2{
+  font-weight: 400;
+  letter-spacing: -1.5px;
+  height: 90px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 20px;
+}
+#search_results {
+  width: 500px;
+  height: 200px;
+  margin-left: 100px;
+  margin-bottom: 10px;
 }

@@ -8,6 +8,7 @@ body {
   font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   color: White;
   background-attachment: fixed;
+  background-size: cover
 }
 
 input[type=text], [type=time]{

@@ -5,29 +5,29 @@
   <link rel="stylesheet" href="/resources/listposts.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-<body>
+<body background="http://i.imgur.com/yohcrfK.gif">
 
 	<div id="main" style="marginLeft:0px;">
 	<span style="font-size:30px;cursor:pointer" id="menu">☰ Menu</span></div>
 		<div id="mySideBar" class="Sidebar">
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+			<a href="/menu"><button class="barpost">Home</button></a></br>
 			<a href="/addpost" ><button class="barpost">Create Post</button></a></br>
 			<a href="/search"><button class="barpost">Search Posts</button></a></br>
 			<a href="/allposts"><button class="barpost">Shows Posts</button></a>
 		</div>
 
 	{% if post|length > 0 %}
-		<h1>Location: {{ location }}</h1>
+		<center><h1>Location: {{ location }}</h1></center>
 
 
 		{% for posts in post %}
 		<div id="search_results">
-        {{ posts.personname }},
-        {{ location }},
-        {{ posts.food_type }},
-        {{ posts.created }},
-        {{ posts.time_begin}} - {{ posts.time_end }},
-        {{ posts.message }}
+      <h2>  Username: {{ posts.personname }}</br>
+      Location: {{ location }},</br>
+      Food Type: {{ posts.food_type }},</br>
+      Time: {{ posts.time_begin}} - {{ posts.time_end }},</br>
+      Message: {{ posts.message }},</br>
     </div>
 		{% endfor %}
 		</ul>

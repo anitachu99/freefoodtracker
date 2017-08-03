@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="/resources/allposts.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
-<body background="https://media3.giphy.com/media/WQMgnHWQdyZjO/giphy.gif">
+<body background="http://carryonkitchen.com/wp-content/uploads/2015/04/IMG_6757-w2500-h2500.jpg">
 	<div id="main" style="marginLeft:0px;">
   <span style="font-size:30px;cursor:pointer" id="menu">☰ Menu</span></div>
     <div id="mySideBar" class="Sidebar">
@@ -18,13 +18,13 @@
 	{% if post|length > 0 %}
 		<center><h1>All the Posts!</h1></center>
 		{% for posts in post %}
+
 		<span id="search_results" style="color: black">
-        <h2>Username: {{ posts.personname }} </br>
+        <center><h2>Username: {{ posts.personname }} </br>
         Location: {{ posts.location }},</br>
       Food Type: {{ posts.food_type }},</br>
         Time: {{ posts.time_begin}} - {{ posts.time_end }},</br>
-      Message:  {{ posts.message }}</h2>
-		<button id="delete" type="button"><a href="/deletepost">Delete</a></button>
+      Message:  {{ posts.message }}</h2></center>
     </span>
 
 		{% endfor %}
