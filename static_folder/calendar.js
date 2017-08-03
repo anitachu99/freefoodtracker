@@ -115,7 +115,6 @@ $('#dec').click(function() {
 function appendCalendarDays(year, month) {
   var count=0;
   var day = new Date(year + "-" + month + "-02").getDay()
-  console.log(day);
   var numdays = daysInMonth(month, year)
   for (i=0; i<day; i++) {
     $('#week1').append("<td></td>");
@@ -141,19 +140,31 @@ $.ajax(url, settings);
 }
 
 function renderEventInfo(eventsjson) {
-  var eventslist = JSON.parse(eventsjson)
-  console.log(eventslist)
+  var eventslist = JSON.parse(eventsjson);
+  console.log(eventslist);
+  for (i=0; i<eventslist.length; i++) {
+    var datey = '#' + eventslist[i]["date"].split("-")[2];
+    $(datey).append('</br>Time: ' + eventslist[i]['time_begin'] + '-' + eventslist[i]['time_end']);
+    $(datey).append('</br>Food Type: ' + eventslist[i]['food_type']);
+    $(datey).append('</br>Location: ' + eventslist[i]['location']);
+    console.log(eventslist[i]['location']);
+  }
+
 }
 
 function putDaysIn(numdays, count) {
-  console.log("before the for loop");
   var currentweek = $('#week1');
   for (i=1;i<numdays+1;i++) {
     if ((count+i)%7 == 1) {
       currentweek = currentweek.next();
-      console.log("added a new row");
     }
-    currentweek.append("<td id="+i+">"+i+"</td>");
+    if (i<10) {
+      currentweek.append("<td id=0"+i+">"+i+"</td>");
+    }
+    else {
+      currentweek.append("<td id="+i+">"+i+"</td>");
+    }
+
 
   }
 }
