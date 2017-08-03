@@ -106,8 +106,7 @@ class AddPostHandler(webapp2.RequestHandler):
 
         print template_vars
 
-        template = jinja_environment.get_template('templates/allposts.html')
-        self.response.write(template.render(template_vars))
+        self.redirect('/allposts')
 
 class ListPostHandler(webapp2.RequestHandler):
     def get(self):
@@ -159,7 +158,7 @@ class AllPostHandler(webapp2.RequestHandler):
         #item = post_key.get()
         #print "item =" + item
         print "working"
-        #post_key.delete()
+        post_key.delete()
         self.redirect('/allposts')
 
 class CalendarHandler(webapp2.RequestHandler):
