@@ -7,566 +7,123 @@ $( "#menu" ).click(function() {
 $('#jan').click(function() {
   $('#monthy').empty();
   $('#monthy').append("January");
-  $('.days').empty();
+  $('.weeks').empty();
   var year = "2017";
   var month = "01";
-  var day = new Date(year + "-" + month + "-01").getDay()
-  var numdays = daysInMonth(month, year)
-  if (day==0) {
-    putDaysIn(numdays);
-  } else if (day==1) {
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==2) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==3) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==4) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==5) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==6) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  }
-  getEventsByMonth(month)
+  appendCalendarDays(year, month);
 })
 
 $('#feb').click(function() {
   $('#monthy').empty();
   $('#monthy').append("February");
-  $('.days').empty();
+  $('.weeks').empty();
   var year = "2017";
   var month = "02";
-  var day = new Date(year + "-" + month + "-01").getDay()
-  var numdays = daysInMonth(month, year)
-  if (day==0) {
-    putDaysIn(numdays);
-  } else if (day==1) {
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==2) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==3) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==4) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==5) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==6) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  }
-  getEventsByMonth(month)
+  appendCalendarDays(year, month);
 })
 
 $('#mar').click(function() {
   $('#monthy').empty();
   $('#monthy').append("March");
-  $('.days').empty();
+  $('.weeks').empty();
   var year = "2017";
   var month = "03";
-  var day = new Date(year + "-" + month + "-01").getDay()
-  var numdays = daysInMonth(month, year)
-  if (day==0) {
-    putDaysIn(numdays);
-  } else if (day==1) {
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==2) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==3) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==4) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==5) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==6) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  }
-  getEventsByMonth(month)
+  appendCalendarDays(year, month);
 })
 
 $('#apr').click(function() {
   $('#monthy').empty();
   $('#monthy').append("April");
-  $('.days').empty();
+  $('.weeks').empty();
   var year = "2017";
   var month = "04";
-  var day = new Date(year + "-" + month + "-01").getDay()
-  var numdays = daysInMonth(month, year)
-  if (day==0) {
-    putDaysIn(numdays);
-  } else if (day==1) {
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==2) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==3) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==4) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==5) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==6) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  }
-  getEventsByMonth(month)
+  appendCalendarDays(year, month);
 })
 
 $('#may').click(function() {
   $('#monthy').empty();
   $('#monthy').append("May");
-  $('.days').empty();
+  $('.weeks').empty();
   var year = "2017";
   var month = "05";
-  var day = new Date(year + "-" + month + "-01").getDay()
-  var numdays = daysInMonth(month, year)
-  if (day==0) {
-    putDaysIn(numdays);
-  } else if (day==1) {
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==2) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==3) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==4) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==5) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==6) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  }
-  getEventsByMonth(month)
+  appendCalendarDays(year, month);
 })
 
 $('#jun').click(function() {
   $('#monthy').empty();
   $('#monthy').append("June");
-  $('.days').empty();
+  $('.weeks').empty();
   var year = "2017";
   var month = "06";
-  var day = new Date(year + "-" + month + "-01").getDay()
-  var numdays = daysInMonth(month, year)
-  if (day==0) {
-    putDaysIn(numdays);
-  } else if (day==1) {
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==2) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==3) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==4) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==5) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==6) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  }
-  getEventsByMonth(month)
+  appendCalendarDays(year, month);
 })
 
 $('#jul').click(function() {
   $('#monthy').empty();
   $('#monthy').append("July");
-  $('.days').empty();
+  $('.weeks').empty();
   var year = "2017";
   var month = "07";
-  var day = new Date(year + "-" + month + "-01").getDay()
-  var numdays = daysInMonth(month, year)
-  if (day==0) {
-    putDaysIn(numdays);
-  } else if (day==1) {
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==2) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==3) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==4) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==5) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==6) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  }
-  getEventsByMonth(month)
+  appendCalendarDays(year, month);
 })
 
 $('#aug').click(function() {
   $('#monthy').empty();
   $('#monthy').append("August");;
-  $('.days').empty();
+  $('.weeks').empty();
   var year = "2017";
   var month = "08";
-  var day = new Date(year + "-" + month + "-01").getDay()
-  var numdays = daysInMonth(month, year)
-  if (day==0) {
-    putDaysIn(numdays);
-  } else if (day==1) {
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==2) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==3) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==4) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==5) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==6) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  }
-  getEventsByMonth(month)
+  appendCalendarDays(year, month);
 })
 
 $('#sep').click(function() {
   $('#monthy').empty();
   $('#monthy').append("September");
-  $('.days').empty();
+  $('.weeks').empty();
   var year = "2017";
   var month = "09";
-  var day = new Date(year + "-" + month + "-01").getDay()
-  var numdays = daysInMonth(month, year)
-  if (day==0) {
-    putDaysIn(numdays);
-  } else if (day==1) {
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==2) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==3) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==4) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==5) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==6) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  }
-  getEventsByMonth(month)
+  appendCalendarDays(year, month);
 })
 
 $('#oct').click(function() {
   $('#monthy').empty();
   $('#monthy').append("October");
-  $('.days').empty();
+  $('.weeks').empty();
   var year = "2017";
   var month = "10";
-  var day = new Date(year + "-" + month + "-01").getDay()
-  var numdays = daysInMonth(month, year)
-  if (day==0) {
-    putDaysIn(numdays);
-  } else if (day==1) {
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==2) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==3) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==4) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==5) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==6) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  }
-  getEventsByMonth(month)
+  appendCalendarDays(year, month);
 })
 
 $('#nov').click(function() {
   $('#monthy').empty();
   $('#monthy').append("November");
-  $('.days').empty();
+  $('.weeks').empty();
   var year = "2017";
   var month = "11";
-  var day = new Date(year + "-" + month + "-01").getDay()
-  var numdays = daysInMonth(month, year)
-  if (day==0) {
-    putDaysIn(numdays);
-  } else if (day==1) {
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==2) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==3) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==4) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==5) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==6) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  }
-  getEventsByMonth(month)
+  appendCalendarDays(year, month);
 })
 
 $('#dec').click(function() {
   $('#monthy').empty();
   $('#monthy').append("December");
-  $('.days').empty();
+  $('.weeks').empty();
   var year = "2017";
   var month = "12";
-  var day = new Date(year + "-" + month + "-01").getDay()
-  var numdays = daysInMonth(month, year)
-  if (day==0) {
-    putDaysIn(numdays);
-  } else if (day==1) {
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==2) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==3) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==4) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==5) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  } else if (day==6) {
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    $('.days').append("<li></li>");
-    putDaysIn(numdays);
-  }
-  getEventsByMonth(month)
+  appendCalendarDays(year, month);
 })
+
+function appendCalendarDays(year, month) {
+  var count=0;
+  var day = new Date(year + "-" + month + "-02").getDay()
+  console.log(day);
+  var numdays = daysInMonth(month, year)
+  for (i=0; i<day; i++) {
+    $('#week1').append("<td></td>");
+    count++
+  }
+  putDaysIn(numdays, count);
+  getEventsByMonth(month)
+}
 
 function getEventsByMonth(month) {
   var url = '/getevents'
@@ -588,9 +145,16 @@ function renderEventInfo(eventsjson) {
   console.log(eventslist)
 }
 
-function putDaysIn(numdays) {
+function putDaysIn(numdays, count) {
+  console.log("before the for loop");
+  var currentweek = $('#week1');
   for (i=1;i<numdays+1;i++) {
-    $('.days').append("<li id="+i+">"+i+"</li>");
+    if ((count+i)%7 == 1) {
+      currentweek = currentweek.next();
+      console.log("added a new row");
+    }
+    currentweek.append("<td id="+i+">"+i+"</td>");
+
   }
 }
 
