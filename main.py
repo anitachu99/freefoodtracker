@@ -126,7 +126,6 @@ class ListPostHandler(webapp2.RequestHandler):
             print userInput.upper()
             if result.location.upper() == userInput.upper():
                     template_vars['post'].append(result)
-
         print template_vars
         # else:
         #     self.response.out.write("We don't have that type of food yet. Sorry!")
