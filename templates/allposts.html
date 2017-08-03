@@ -24,7 +24,13 @@
         Location: {{ posts.location }},</br>
       Food Type: {{ posts.food_type }},</br>
         Time: {{ posts.time_begin}} - {{ posts.time_end }},</br>
-      Message:  {{ posts.message }}</h2></center>
+      Message:  {{ posts.message }}</h2></center></br>
+			<center>
+				<form method="post" class="form">
+					<input type="hidden" value={{posts.key.urlsafe()}} name="KeyID">
+					<button type="submit" value="Delete" {# onclick="DeleteButton({{ posts.key.id() }})" #} id="{{ posts.key }}" name="DeleteButton">Delete</button>
+				</form>
+			</center>
     </span>
 
 		{% endfor %}
