@@ -167,6 +167,24 @@ class CalendarHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template("templates/calendar.html")
         self.response.write(template.render())
 
+class GetEvents(webapp2.RequestHandler):
+    def get(self):
+        results = Food.query().order(Food.created).fetch()
+        events = []
+        for result in results:
+            month = result.date.split('-')[1]
+            if month == self.request.get("month"):
+                event_dict = {}
+                event_dict["food_type"] = result.food_type
+                event_dict["time_begin"] = result.time_begin
+                event_dict["time_end"] = result.time_end
+                event_dict["location"] = result.location
+                event_dict["date"] = result.date
+                events.append(event_dict)
+        sendinginfo = json.dumps(events)
+        self.response.write(sendinginfo)
+
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/log_in', MainPage),
@@ -174,5 +192,6 @@ app = webapp2.WSGIApplication([
     ('/search', ListPostHandler),
     ('/menu', MenuHandler),
     ('/allposts', AllPostHandler),
-    ('/calendar', CalendarHandler)
+    ('/calendar', CalendarHandler),
+    ('/getevents', GetEvents)
 ], debug=True)

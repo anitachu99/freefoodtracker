@@ -9,7 +9,7 @@ $('#jan').click(function() {
   $('#monthy').append("January");
   $('.days').empty();
   var year = "2017";
-  var month = "1";
+  var month = "01";
   var day = new Date(year + "-" + month + "-01").getDay()
   var numdays = daysInMonth(month, year)
   if (day==0) {
@@ -48,6 +48,7 @@ $('#jan').click(function() {
     $('.days').append("<li></li>");
     putDaysIn(numdays);
   }
+  getEventsByMonth(month)
 })
 
 $('#feb').click(function() {
@@ -55,7 +56,7 @@ $('#feb').click(function() {
   $('#monthy').append("February");
   $('.days').empty();
   var year = "2017";
-  var month = "2";
+  var month = "02";
   var day = new Date(year + "-" + month + "-01").getDay()
   var numdays = daysInMonth(month, year)
   if (day==0) {
@@ -94,6 +95,7 @@ $('#feb').click(function() {
     $('.days').append("<li></li>");
     putDaysIn(numdays);
   }
+  getEventsByMonth(month)
 })
 
 $('#mar').click(function() {
@@ -101,7 +103,7 @@ $('#mar').click(function() {
   $('#monthy').append("March");
   $('.days').empty();
   var year = "2017";
-  var month = "3";
+  var month = "03";
   var day = new Date(year + "-" + month + "-01").getDay()
   var numdays = daysInMonth(month, year)
   if (day==0) {
@@ -140,6 +142,7 @@ $('#mar').click(function() {
     $('.days').append("<li></li>");
     putDaysIn(numdays);
   }
+  getEventsByMonth(month)
 })
 
 $('#apr').click(function() {
@@ -147,7 +150,7 @@ $('#apr').click(function() {
   $('#monthy').append("April");
   $('.days').empty();
   var year = "2017";
-  var month = "4";
+  var month = "04";
   var day = new Date(year + "-" + month + "-01").getDay()
   var numdays = daysInMonth(month, year)
   if (day==0) {
@@ -186,6 +189,7 @@ $('#apr').click(function() {
     $('.days').append("<li></li>");
     putDaysIn(numdays);
   }
+  getEventsByMonth(month)
 })
 
 $('#may').click(function() {
@@ -193,7 +197,7 @@ $('#may').click(function() {
   $('#monthy').append("May");
   $('.days').empty();
   var year = "2017";
-  var month = "5";
+  var month = "05";
   var day = new Date(year + "-" + month + "-01").getDay()
   var numdays = daysInMonth(month, year)
   if (day==0) {
@@ -232,6 +236,7 @@ $('#may').click(function() {
     $('.days').append("<li></li>");
     putDaysIn(numdays);
   }
+  getEventsByMonth(month)
 })
 
 $('#jun').click(function() {
@@ -239,7 +244,7 @@ $('#jun').click(function() {
   $('#monthy').append("June");
   $('.days').empty();
   var year = "2017";
-  var month = "6";
+  var month = "06";
   var day = new Date(year + "-" + month + "-01").getDay()
   var numdays = daysInMonth(month, year)
   if (day==0) {
@@ -278,6 +283,7 @@ $('#jun').click(function() {
     $('.days').append("<li></li>");
     putDaysIn(numdays);
   }
+  getEventsByMonth(month)
 })
 
 $('#jul').click(function() {
@@ -285,7 +291,7 @@ $('#jul').click(function() {
   $('#monthy').append("July");
   $('.days').empty();
   var year = "2017";
-  var month = "7";
+  var month = "07";
   var day = new Date(year + "-" + month + "-01").getDay()
   var numdays = daysInMonth(month, year)
   if (day==0) {
@@ -324,6 +330,7 @@ $('#jul').click(function() {
     $('.days').append("<li></li>");
     putDaysIn(numdays);
   }
+  getEventsByMonth(month)
 })
 
 $('#aug').click(function() {
@@ -331,7 +338,7 @@ $('#aug').click(function() {
   $('#monthy').append("August");;
   $('.days').empty();
   var year = "2017";
-  var month = "8";
+  var month = "08";
   var day = new Date(year + "-" + month + "-01").getDay()
   var numdays = daysInMonth(month, year)
   if (day==0) {
@@ -370,6 +377,7 @@ $('#aug').click(function() {
     $('.days').append("<li></li>");
     putDaysIn(numdays);
   }
+  getEventsByMonth(month)
 })
 
 $('#sep').click(function() {
@@ -377,7 +385,7 @@ $('#sep').click(function() {
   $('#monthy').append("September");
   $('.days').empty();
   var year = "2017";
-  var month = "9";
+  var month = "09";
   var day = new Date(year + "-" + month + "-01").getDay()
   var numdays = daysInMonth(month, year)
   if (day==0) {
@@ -416,6 +424,7 @@ $('#sep').click(function() {
     $('.days').append("<li></li>");
     putDaysIn(numdays);
   }
+  getEventsByMonth(month)
 })
 
 $('#oct').click(function() {
@@ -462,6 +471,7 @@ $('#oct').click(function() {
     $('.days').append("<li></li>");
     putDaysIn(numdays);
   }
+  getEventsByMonth(month)
 })
 
 $('#nov').click(function() {
@@ -508,6 +518,7 @@ $('#nov').click(function() {
     $('.days').append("<li></li>");
     putDaysIn(numdays);
   }
+  getEventsByMonth(month)
 })
 
 $('#dec').click(function() {
@@ -554,6 +565,7 @@ $('#dec').click(function() {
     $('.days').append("<li></li>");
     putDaysIn(numdays);
   }
+  getEventsByMonth(month)
 })
 
 function getEventsByMonth(month) {
@@ -564,11 +576,16 @@ function getEventsByMonth(month) {
   var settings = {
   'method': 'GET', //call the get function in mainhandler
   'data': data, //send the user input to the server
-  'success': renderUserInfo,
+  'success': renderEventInfo,
 };
 
 $.ajax(url, settings);
 
+}
+
+function renderEventInfo(eventsjson) {
+  var eventslist = JSON.parse(eventsjson)
+  console.log(eventslist)
 }
 
 function putDaysIn(numdays) {
