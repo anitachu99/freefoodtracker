@@ -25,3 +25,7 @@ function testTrue(){
       openNav();
     }
 }
+
+function DeleteButton(post_key){
+  alert(post_key)
+}

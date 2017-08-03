@@ -153,6 +153,16 @@ class AllPostHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('templates/allposts.html')
         self.response.out.write(template.render(template_vars))
 
+    def post(self):
+        post_key = self.request.get('KeyID')
+        post_key = ndb.Key(urlsafe=post_key)
+        print "object = "+ str(post_key.id())
+        #item = post_key.get()
+        #print "item =" + item
+        print "working"
+        #post_key.delete()
+        self.redirect('/allposts')
+
 class CalendarHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("templates/calendar.html")
