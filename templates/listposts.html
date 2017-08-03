@@ -32,7 +32,8 @@
 		{% endfor %}
 		</ul>
 	{% else %}
-		<p>We don't know about food near your location. Sorry!</p>
+		<div id="warning"><p>We don't know about food near your location. Sorry!</p>
+		<a href="/search"><button class="search">Back To Search Page</button></a></div>
 	{% endif %}
 	<script src="resources/listposts.js"></script>
 </body>
