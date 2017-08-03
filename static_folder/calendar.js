@@ -3,6 +3,7 @@ $( "#menu" ).click(function() {
   testTrue();
 });
 
+
 $('#jan').click(function() {
   $('#monthy').empty();
   $('#monthy').append("January");
@@ -555,11 +556,24 @@ $('#dec').click(function() {
   }
 })
 
+function getEventsByMonth(month) {
+  var url = '/getevents'
+  var data = {};
+  data["month"] = month;
 
+  var settings = {
+  'method': 'GET', //call the get function in mainhandler
+  'data': data, //send the user input to the server
+  'success': renderUserInfo,
+};
+
+$.ajax(url, settings);
+
+}
 
 function putDaysIn(numdays) {
   for (i=1;i<numdays+1;i++) {
-    $('.days').append("<li>"+i+"</li>");
+    $('.days').append("<li id="+i+">"+i+"</li>");
   }
 }
 
