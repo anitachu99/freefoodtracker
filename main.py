@@ -66,10 +66,14 @@ class AddPostHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
         template = jinja_environment.get_template('templates/addPost.html')
-        # user = users.get_current_user()
-        self.response.write(template.render())
+        template_vars = {
+        'user': user,
+        'log_out': users.create_logout_url('/')
+        }
+        self.response.write(template.render(template_vars))
 
     def post(self):
+        user = users.get_current_user()
         name = self.request.get("personname")
         food_type = self.request.get('food_type')
         location = self.request.get('location')
@@ -117,10 +121,15 @@ class AddPostHandler(webapp2.RequestHandler):
 class ListPostHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
+        template_vars = {
+        'user': user,
+        'log_out': users.create_logout_url('/')
+        }
         template = jinja_environment.get_template('templates/searchposts.html')
-        self.response.out.write(template.render())
+        self.response.out.write(template.render(template_vars))
 
     def post(self):
+        user = users.get_current_user()
         userInput = self.request.get("location")
         results = Food.query().fetch()
         template_vars = {
@@ -155,7 +164,9 @@ class AllPostHandler(webapp2.RequestHandler):
         user = users.get_current_user()
         results = Food.query().order(Food.created).fetch()
         template_vars = {
-                'post': []
+                'post': [],
+                'user': user,
+                'log_out': users.create_logout_url('/')
                 }
         for result in results:
             template_vars['post'].append(result)
@@ -181,7 +192,11 @@ class CalendarHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
         template = jinja_environment.get_template("templates/calendar.html")
-        self.response.write(template.render())
+        template_vars = {
+        'user': user,
+        'log_out': users.create_logout_url('/')
+        }
+        self.response.write(template.render(template_vars))
 
 class GetEvents(webapp2.RequestHandler):
     def get(self):
