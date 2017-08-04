@@ -5,10 +5,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <title> Calendar </title>
 </head>
-<body>
-  <center>
-  <h1>Calendar</h1>
-</center>
+<body background="https://s-media-cache-ak0.pinimg.com/originals/03/6b/51/036b51d06bafc488101941ac6206406a.jpg">
   <div id="main" style="marginLeft:0px;">
   <span style="font-size:30px;cursor:pointer" id="menu">☰ Menu</span></div>
     <div id="mySideBar" class="Sidebar">
@@ -22,6 +19,22 @@
         <a href="/log_in" class="barpost"><button>Sign In!</button></a></br>
       {% endif %}
     </div>
+  <center>
+  <h1>Calendar</h1>
+</center>
+  <!-- <div id="main" style="marginLeft:0px;">
+  <span style="font-size:30px;cursor:pointer" id="menu">☰ Menu</span></div>
+    <div id="mySideBar" class="Sidebar">
+      <a href="/menu" class="barpost"><button class="barpost">Home</button></a></br>
+      <a href="/addpost" class="barpost"><button class="barpost">Create Post</button></a></br>
+      <a href="/search" class="barpost"><button class="barpost">Search Posts</button></a></br>
+      <a href="/allposts" ><button class="barpost">Show Posts</button></a></br>
+      {% if user: %}
+      <a href="{{ log_out }}" class="barpost"><button>{{ user }}, </br>Sign Out</button></a></br>
+      {% else: %}
+        <a href="/log_in" class="barpost"><button>Sign In!</button></a></br>
+      {% endif %}
+    </div> -->
 
 <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn">Select a Month</button>
@@ -61,7 +74,7 @@
     <th>Fr</th>
     <th>Sa</th>
   </tr>
-  <tr id="week1" class="weeks"></tr>
+  <tr id="week1" class="weeks" ></tr>
   <tr class="weeks"></tr>
   <tr class="weeks"></tr>
   <tr class="weeks"></tr>
