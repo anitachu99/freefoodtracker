@@ -163,6 +163,7 @@ class AllPostHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
         results = Food.query().order(Food.created).fetch()
+        results = results[::-1]
         template_vars = {
                 'post': [],
                 'user': user,
